@@ -80,6 +80,10 @@ module.exports = {
       { test: /\.html$/, use: 'html-loader' },
       { test: /\.(png|svg)$/, use: 'url-loader?limit=10000' },
       { test: /\.(jpg|gif)$/, use: 'file-loader' },
+      {
+        test: /\.less$/,
+        loader: 'less-loader', // compiles Less to CSS
+      },
     ],
   },
   optimization: {
