@@ -1,26 +1,26 @@
-var webpack = require('webpack');
-var path = require('path');
+const webpack = require('webpack');
+const path = require('path');
 
 // variables
-var isProduction = process.argv.indexOf('-p') >= 0 || process.env.NODE_ENV === 'production';
-var sourcePath = path.join(__dirname, './src');
-var outPath = path.join(__dirname, './dist');
+const isProduction = process.argv.indexOf('-p') >= 0 || process.env.NODE_ENV === 'production';
+const sourcePath = path.join(__dirname, './src');
+const outPath = path.join(__dirname, './dist');
 
 // plugins
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var MiniCssExtractPlugin = require('mini-css-extract-plugin');
-var WebpackCleanupPlugin = require('webpack-cleanup-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 
 module.exports = {
   context: sourcePath,
   entry: {
-    app: './main.tsx'
+    app: './main.tsx',
   },
   output: {
     path: outPath,
     filename: 'bundle.js',
     chunkFilename: '[chunkhash].js',
-    publicPath: '/'
+    publicPath: '/',
   },
   target: 'web',
   resolve: {
@@ -29,8 +29,8 @@ module.exports = {
     // (jsnext:main directs not usually distributable es6 format, but es6 sources)
     mainFields: ['module', 'browser', 'main'],
     alias: {
-      app: path.resolve(__dirname, 'src/app/')
-    }
+      app: path.resolve(__dirname, 'src/app/'),
+    },
   },
   module: {
     rules: [
@@ -40,10 +40,10 @@ module.exports = {
         use: [
           isProduction && {
             loader: 'babel-loader',
-            options: { plugins: ['react-hot-loader/babel'] }
+            options: { plugins: ['react-hot-loader/babel'] },
           },
-          'ts-loader'
-        ].filter(Boolean)
+          'ts-loader',
+        ].filter(Boolean),
       },
       // css
       {
@@ -56,8 +56,8 @@ module.exports = {
               modules: true,
               sourceMap: !isProduction,
               importLoaders: 1,
-              localIdentName: isProduction ? '[hash:base64:5]' : '[local]__[hash:base64:5]'
-            }
+              localIdentName: isProduction ? '[hash:base64:5]' : '[local]__[hash:base64:5]',
+            },
           },
           {
             loader: 'postcss-loader',
@@ -69,18 +69,18 @@ module.exports = {
                 require('postcss-cssnext')(),
                 require('postcss-reporter')(),
                 require('postcss-browser-reporter')({
-                  disabled: isProduction
-                })
-              ]
-            }
-          }
-        ]
+                  disabled: isProduction,
+                }),
+              ],
+            },
+          },
+        ],
       },
       // static assets
       { test: /\.html$/, use: 'html-loader' },
       { test: /\.(png|svg)$/, use: 'url-loader?limit=10000' },
-      { test: /\.(jpg|gif)$/, use: 'file-loader' }
-    ]
+      { test: /\.(jpg|gif)$/, use: 'file-loader' },
+    ],
   },
   optimization: {
     splitChunks: {
@@ -88,44 +88,44 @@ module.exports = {
       cacheGroups: {
         commons: {
           chunks: 'initial',
-          minChunks: 2
+          minChunks: 2,
         },
         vendors: {
           test: /[\\/]node_modules[\\/]/,
           chunks: 'all',
-          priority: -10
-        }
-      }
+          priority: -10,
+        },
+      },
     },
-    runtimeChunk: true
+    runtimeChunk: true,
   },
   plugins: [
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'development', // use 'development' unless process.env.NODE_ENV is defined
-      DEBUG: false
+      DEBUG: false,
     }),
     new WebpackCleanupPlugin(),
     new MiniCssExtractPlugin({
       filename: '[contenthash].css',
-      disable: !isProduction
+      disable: !isProduction,
     }),
     new HtmlWebpackPlugin({
-      template: 'assets/index.html'
-    })
+      template: 'assets/index.html',
+    }),
   ],
   devServer: {
     contentBase: sourcePath,
     hot: true,
     inline: true,
     historyApiFallback: {
-      disableDotRule: true
+      disableDotRule: true,
     },
-    stats: 'minimal'
+    stats: 'minimal',
   },
   node: {
     // workaround for webpack-dev-server issue
     // https://github.com/webpack/webpack-dev-server/issues/60#issuecomment-103411179
     fs: 'empty',
-    net: 'empty'
-  }
+    net: 'empty',
+  },
 };
