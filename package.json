@@ -1,0 +1,9 @@
+{
+  "name": "website-new-project",
+  "version": "1.0.0",
+  "description": "A starter project template with Webpack to make beautiful websites",
+  "main": "src/start.ts",
+  "repository": "https://github.com/Kana00/website-new-project.git",
+  "author": "Kana00 <illya.delsarte@gmail.com>",
+  "license": "MIT"
+}
