@@ -59,3 +59,9 @@ typings/
 
 # next.js build output
 .next
+
+# MacOs
+.DS_Store
+
+# webpack
+dist/*
