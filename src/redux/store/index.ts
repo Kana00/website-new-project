@@ -1,8 +1,8 @@
-import { logger } from 'app/middleware';
 import { History } from 'history';
 import { routerMiddleware } from 'react-router-redux';
 import { applyMiddleware, createStore, Store } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { logger } from '../../middleware';
 import { rootReducer } from '../reducers';
 
 export function configureStore(history: History, initialState?: any): Store<any> {
