@@ -1,18 +1,21 @@
 {
   "name": "website-new-project",
-  "version": "1.0.0",
-  "description": "A starter project template with Webpack to make beautiful websites",
   "main": "src/start.tsx",
+  "version": "1.0.1",
+  "description": "A starter project template with Webpack to make beautiful websites",
+  "repository": "github:Kana00/website-new-project",
+  "author": "kana",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "webpack-dev-server --mode development --hot --progress --color --port 3000 --open",
     "build": "webpack -p --progress --colors",
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\""
   },
-  "license": "MIT",
   "devDependencies": {
     "@types/classnames": "2.2.4",
     "@types/history": "4.6.2",
+    "@types/jest": "^23.1.0",
     "@types/node": "10.3.2",
     "@types/react": "16.3.17",
     "@types/react-dom": "16.0.6",
@@ -26,6 +29,8 @@
     "file-loader": "^1.1.11",
     "html-loader": "^1.0.0-alpha.0",
     "html-webpack-plugin": "^4.0.0-alpha",
+    "jest": "^23.1.0",
+    "jest-canvas-mock": "^1.0.3",
     "less-loader": "^4.1.0",
     "mini-css-extract-plugin": "^0.4.0",
     "postcss": "^6.0.22",
@@ -39,6 +44,7 @@
     "react-hot-loader": "^4.3.1",
     "redux-devtools-extension": "^2.13.2",
     "style-loader": "^0.21.0",
+    "ts-jest": "^22.4.6",
     "ts-loader": "^4.4.1",
     "typescript": "^2.9.1",
     "url-loader": "^1.0.1",
@@ -61,5 +67,19 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "/__tests__/.*\\.(ts|tsx|js)$",
+    "setupFiles": [
+      "jest-canvas-mock"
+    ]
   }
 }
