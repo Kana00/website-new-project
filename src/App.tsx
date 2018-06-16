@@ -2,13 +2,13 @@ import * as React from 'react';
 import { hot } from 'react-hot-loader';
 import TitlePresentation from '../src/components/TitlePresentation/TitlePresentation';
 import MainPage from '../src/routes/MainPage';
-import { InjectionRoute, InjectionSwitch } from './components/InjectionComponent/InjectionComponent';
+import { InjectionRoute } from './components/InjectionComponent/InjectionComponent';
+import DemoReduxPage from './routes/DemoReduxPage';
 
 export const App = hot(module)(() => (
   <div>
     <TitlePresentation />
-    <InjectionSwitch>
-      <InjectionRoute path="/" component={MainPage} />
-    </InjectionSwitch>
+    <InjectionRoute exact path="/" component={MainPage} />
+    <InjectionRoute exact path="/DemoReduxPage" component={DemoReduxPage} />
   </div>
 ));

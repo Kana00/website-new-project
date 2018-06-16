@@ -13,3 +13,8 @@
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #000000;
 }
+
+.link {
+  margin-left: 2rem;
+  font-size: 12pt;
+}

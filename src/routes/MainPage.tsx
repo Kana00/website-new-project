@@ -12,21 +12,21 @@ interface MainScreenPropsType {
 class MainPage extends React.Component<MainScreenPropsType> {
   constructor(props: any) {
     super(props);
-    this.props.showMessage('message empty');
+    // this.props.showMessage('message empty');
   }
 
   render() {
     return (
-      <Flexbox flexDirection='column' justifyContent='center' alignItems='center'>
-        <Flexbox flexDirection='column' justifyContent='center' alignItems='center'>
-          <h1>Features</h1>
+      <div>
+        <Flexbox flexDirection='column'>
+          <h1>Main page</h1>
           <p>Redux exemple ⤑ {this.props.monMessage} ⤎</p>
-          <Flexbox flexDirection='row' justifyContent='space-around'>
+          <Flexbox flexDirection='row' >
             <input type="button" value="add message" onClick={() => this.props.showMessage('button is pressed')}/>
             <input type="button" value="remove the message" onClick={() => this.props.hideMessage()}/>
           </Flexbox>
         </Flexbox>
-      </Flexbox>
+      </div>
     );
   }
 }
