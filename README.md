@@ -25,6 +25,7 @@ Finally, run the template and enjoy:
 ```bash
 > git clone https://github.com/Kana00/website-new-project.git
 > cd website-new-project
+> yarn install
 > yarn start
 ```
 
