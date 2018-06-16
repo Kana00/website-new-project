@@ -1,4 +1,10 @@
 /** Global definitions for development **/
+// declaration of global varaible in the global (window) object
+declare module NodeJS {
+  interface Global {
+    __REDUX_DEVTOOLS_EXTENSION__(): any
+  }
+}
 
 // for style loader
 declare module '*.css' {
