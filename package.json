@@ -1,9 +1,8 @@
 {
-  "name": "typescript-react-redux-boilerplate",
+  "name": "website-new-project",
   "version": "1.0.0",
-  "private": true,
-  "description": "A frontend boilerplate with React, Redux and Typescript",
-  "main": "index.js",
+  "description": "A starter project template with Webpack to make beautiful websites",
+  "main": "src/start.tsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development --hot --progress --color --port 3000 --open",
