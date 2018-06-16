@@ -1,5 +1,4 @@
 # Contributing
-
 Hi, If you want to contribute to this project, you can do it in two ways:
 
 - Report an issue if you find bugs, have suggestions.
