@@ -1,16 +1,15 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
 import { App } from './App';
+import { InjectionProvider, InjectionRouter } from './components/InjectionComponent/InjectionComponent';
 import store from './redux/store/store';
 
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router>
+  <InjectionProvider store={store}>
+    <InjectionRouter>
       <App />
-    </Router>
-  </Provider>,
+    </InjectionRouter>
+  </InjectionProvider>,
   document.getElementById('root')
 );
