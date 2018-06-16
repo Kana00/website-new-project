@@ -4,7 +4,7 @@ import MainPage from './MainPage';
 import NoMatch from './NoMatch';
 import SecondPage from './SecondPage';
 
-export default class RouteHandler extends React.Component<{},{}> {
+export default class RouteHandler extends React.Component {
   render() {
     return (
       <SwitchIn>

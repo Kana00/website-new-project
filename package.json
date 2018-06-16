@@ -48,11 +48,15 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.109",
     "@types/react-router-dom": "^4.2.7",
     "classnames": "^2.2.6",
     "flexbox-react": "^4.4.0",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.2",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
+    "react-i18nify": "^1.11.14",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
