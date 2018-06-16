@@ -71,6 +71,8 @@ After that, link all bundle files in a web server like nodeJS-Express, nginx, ap
 + [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
 + [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=fr)
 
+If you want to use this template with Electron.js, you can use this repository : [electron-new-project](https://github.com/Kana00/electron-new-project)
+
 ---
 
 ### License
