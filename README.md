@@ -1,12 +1,12 @@
 # electron-new-project
 
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
-![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 
 `website-new-project` is a basic, solid template for creating a new project by
 providing an already predefined set of features for the developers.
 
-<p align='center'><img style='border: 1px solid #DDD' src='https://zupimages.net/up/18/24/n14p.png' style='width:90%'/></p>
+<p align='center'><img src='https://zupimages.net/up/18/24/8us2.jpg' style='width:100%'/></p>
 
 ---
 
@@ -58,7 +58,7 @@ Finally, run the template and enjoy:
 ### Make the app in production
 
 As simple as that:
-```JSON
+```bash
 > yarn build
 ```
 
@@ -66,7 +66,7 @@ After that, link all bundle files in a web server like nodeJS-Express, nginx, ap
 
 ---
 
-**Note:** we advise you to install these 2 extensions to improve the development experience:
+**NOTE:** we advise you to install these 2 extensions to improve the development experience:
 
 + [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
 + [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=fr)
