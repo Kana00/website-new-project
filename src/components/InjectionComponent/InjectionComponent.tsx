@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { Provider } from 'react-redux';
 import { Route } from 'react-router';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Switch } from 'react-router-dom';
 /**
  * A component that hoists its 'props' into context that can be injected into child components
  * via the MobX 'inject' decorator or function.
@@ -37,7 +37,7 @@ export class InjectionSwitch extends React.Component<any> {
   public render(): JSX.Element {
       const stores = { ...this.props };
       delete stores.children;
-      return React.createElement(Router as any, this.props, this.props.children);
+      return React.createElement(Switch as any, this.props, this.props.children);
   }
 }
 
