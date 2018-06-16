@@ -1,6 +1,6 @@
 import Flexbox from 'flexbox-react';
 import * as React from 'react';
-import { InjectionLink } from '../InjectionComponent/InjectionComponent';
+import { LinkIn } from '../InjectionComponent/InjectionComponent';
 import * as style from './TitlePresentation.css';
 
 export default class TitlePrenstation extends React.Component {
@@ -9,8 +9,8 @@ export default class TitlePrenstation extends React.Component {
       <div className={style.headerDemo}>
         <Flexbox alignItems='center'>
           <div className={style.title}><span>website-new-project</span></div>
-          <InjectionLink className={style.link} to="/">main page</InjectionLink>
-          <InjectionLink className={style.link} to="/SecondPage">second page</InjectionLink>
+          <LinkIn className={style.link} to="/">main page</LinkIn>
+          <LinkIn className={style.link} to="/SecondPage">second page</LinkIn>
         </Flexbox>
       </div>
     );

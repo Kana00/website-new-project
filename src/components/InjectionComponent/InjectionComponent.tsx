@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Link, Switch } from 'react-router-dom';
  * This component is an adapter for the MobX 'Provider' component and is a workaround because of the typing
  * issue reported in https://github.com/mobxjs/mobx-react/issues/342.
  */
-export class InjectionProvider extends React.Component<any> {
+export class ProviderIn extends React.Component<any> {
   /**
    * Renders the [[InjectionProvider]] into the component tree.
    *
@@ -25,7 +25,7 @@ export class InjectionProvider extends React.Component<any> {
   }
 }
 
-export class InjectionRouter extends React.Component<any> {
+export class RouterIn extends React.Component<any> {
   public render(): JSX.Element {
       const stores = { ...this.props };
       delete stores.children;
@@ -33,7 +33,7 @@ export class InjectionRouter extends React.Component<any> {
   }
 }
 
-export class InjectionSwitch extends React.Component<any> {
+export class SwitchIn extends React.Component<any> {
   public render(): JSX.Element {
       const stores = { ...this.props };
       delete stores.children;
@@ -41,7 +41,7 @@ export class InjectionSwitch extends React.Component<any> {
   }
 }
 
-export class InjectionRoute extends React.Component<any> {
+export class RouteIn extends React.Component<any> {
   public render(): JSX.Element {
       const stores = { ...this.props };
       delete stores.children;
@@ -49,7 +49,7 @@ export class InjectionRoute extends React.Component<any> {
   }
 }
 
-export class InjectionLink extends React.Component<any> {
+export class LinkIn extends React.Component<any> {
   public render(): JSX.Element {
       const stores = { ...this.props };
       delete stores.children;
