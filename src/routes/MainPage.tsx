@@ -20,9 +20,9 @@ class MainPage extends React.Component<MainScreenPropsType> {
       <div>
         <Flexbox flexDirection='column'>
           <h1>Main page</h1>
-          <p>Redux exemple ⤑ {this.props.monMessage} ⤎</p>
+          <p  style={{marginRight: '1rem', marginLeft: '1rem'}} >Redux exemple ⤑ {this.props.monMessage} ⤎</p>
           <Flexbox flexDirection='row' >
-            <input type="button" value="add message" onClick={() => this.props.showMessage('button is pressed')}/>
+            <input style={{marginRight: '1rem', marginLeft: '1rem'}} type="button" value="add message" onClick={() => this.props.showMessage('button is pressed')}/>
             <input type="button" value="remove the message" onClick={() => this.props.hideMessage()}/>
           </Flexbox>
         </Flexbox>

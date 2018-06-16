@@ -3,12 +3,12 @@ import { hot } from 'react-hot-loader';
 import TitlePresentation from '../src/components/TitlePresentation/TitlePresentation';
 import MainPage from '../src/routes/MainPage';
 import { InjectionRoute } from './components/InjectionComponent/InjectionComponent';
-import DemoReduxPage from './routes/DemoReduxPage';
+import SecondPage from './routes/SecondPage';
 
 export const App = hot(module)(() => (
   <div>
     <TitlePresentation />
     <InjectionRoute exact path="/" component={MainPage} />
-    <InjectionRoute exact path="/DemoReduxPage" component={DemoReduxPage} />
+    <InjectionRoute exact path="/SecondPage" component={SecondPage} />
   </div>
 ));

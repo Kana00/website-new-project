@@ -10,7 +10,7 @@ export default class TitlePrenstation extends React.Component {
         <Flexbox alignItems='center'>
           <div className={style.title}><span>website-new-project</span></div>
           <InjectionLink className={style.link} to="/">main page</InjectionLink>
-          <InjectionLink className={style.link} to="/DemoReduxPage">second page</InjectionLink>
+          <InjectionLink className={style.link} to="/SecondPage">second page</InjectionLink>
         </Flexbox>
       </div>
     );

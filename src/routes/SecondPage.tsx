@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export default class DemoReduxPage extends React.Component {
+export default class SecondPage extends React.Component {
   render() {
     return (
       <div>
