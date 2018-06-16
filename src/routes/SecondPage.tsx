@@ -5,7 +5,7 @@ export default class SecondPage extends React.Component {
     return (
       <div>
         <h1>Second page</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br/>
+        <p style={{marginRight: '1rem', marginLeft: '1rem'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br/>
         Placeat ea autem quisquam maxime quos dolorum doloribus ut soluta,<br/>
         voluptate repellendus harum dolorem provident non! Totam ipsa<br/>
         provident deleniti numquam ipsam.</p>
