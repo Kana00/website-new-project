@@ -8,6 +8,7 @@ import { rootReducer } from '../reducers';
 export function configureStore(history: History, initialState?: any): Store<any> {
   let middleware = applyMiddleware(logger, routerMiddleware(history));
 
+  // add developer tools only in dev mode
   if (process.env.NODE_ENV !== 'production') {
     middleware = composeWithDevTools(middleware);
   }
