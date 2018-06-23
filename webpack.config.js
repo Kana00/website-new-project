@@ -9,26 +9,28 @@ const node = require('./webpack/node');
 // variables
 const sourcePath = path.join(__dirname, './src');
 const outPath = path.join(__dirname, './dist');
+const isProduction = process.argv.indexOf('-p') >= 0 || process.env.NODE_ENV === 'production';
 
 
-const defaultConfiguration = {
+const webpackConfig = {
   context: sourcePath,
   entry: {
     app: './start.tsx',
   },
   output: {
     path: outPath,
-    filename: 'bundle.js',
+    filename: 'main.js',
     chunkFilename: '[chunkhash].js',
   },
   target: 'web',
+  devtool: (isProduction) ? false : 'cheap-module-eval-source-map',
 };
 
-defaultConfiguration.module = modules;
-defaultConfiguration.resolve = resolve;
-defaultConfiguration.optimization = optimization;
-defaultConfiguration.plugins = plugins;
-defaultConfiguration.devServer = devServer;
-defaultConfiguration.node = node;
+webpackConfig.module = modules;
+webpackConfig.resolve = resolve;
+webpackConfig.optimization = optimization;
+webpackConfig.plugins = plugins;
+webpackConfig.devServer = devServer;
+webpackConfig.node = node;
 
-module.exports = defaultConfiguration;
+module.exports = webpackConfig;

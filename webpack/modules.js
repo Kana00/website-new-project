@@ -7,18 +7,23 @@ const isProduction = process.argv.indexOf('-p') >= 0 || process.env.NODE_ENV ===
 
 module.exports = {
   rules: [
-    // .ts, .tsx
+
+
+    // ---------------------------------------------------------------------------------- .ts, .tsx
     {
       test: /\.tsx?$/,
       use: [
         isProduction && {
           loader: 'babel-loader',
+          // all this.states from react component is kept when the page is reloading
           options: { plugins: ['react-hot-loader/babel'] },
         },
         'ts-loader',
       ].filter(Boolean),
     },
-    // css
+
+
+    // ---------------------------------------------------------------------------------- css
     {
       test: /\.css$/,
       use: [
@@ -49,10 +54,22 @@ module.exports = {
         },
       ],
     },
-    // static assets
+
+
+    // ---------------------------------------------------------------------------------- html
     { test: /\.html$/, use: 'html-loader' },
-    { test: /\.(png|svg)$/, use: 'url-loader?limit=10000' },
+
+
+    // ---------------------------------------------------------------------------------- image
+    { test: /\.(png|svg)$/, use: 'url-loader?limit=8192' },
     { test: /\.(jpg|gif)$/, use: 'file-loader' },
+
+
+    // ---------------------------------------------------------------------------------- font
+    { test: /\.(woff2?|eot|ttf|otf)$/, use: 'file-loader' },
+
+
+    // ---------------------------------------------------------------------------------- less
     {
       test: /\.less$/,
       loader: 'less-loader', // compiles Less to CSS

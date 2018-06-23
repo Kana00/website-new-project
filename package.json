@@ -8,8 +8,8 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "start": "webpack-dev-server --mode development --hot --progress --color --port 3000 --open",
-    "build": "webpack -p --progress --colors",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode=development --hot --progress --color --port 3000 --open",
+    "build": "cross-env NODE_ENV=production webpack -p --progress --colors",
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\""
   },
   "devDependencies": {
@@ -26,6 +26,7 @@
     "@types/webpack-env": "1.13.6",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
+    "cross-env": "^5.2.0",
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
     "gulp": "^3.9.1",
